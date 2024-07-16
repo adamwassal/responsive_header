@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+a {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    color: black;
+    font-weight: bold;
+}
+
+.links {
+    display: flex;
+}
+
+.links a:hover{
+    color: rgb(55, 55, 55);
+}
+
+
+.dropdown {
+    visibility: hidden;
+    position: absolute;
+    top: 50px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 10%;
+    padding: 20px;
+
+}
+
+.p_drop:hover .dropdown {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.dropdown a {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.dropdown .footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f9fafb;
+    bottom: 0%;
+    border-bottom-left-radius: 20%  ;
+}
+
+.dropdown .footer a {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: 10px;
+}
+
+.dropdown a div {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown a span {
+    background-color: #f9fafb;
+    padding: 5px;
+    border-radius: 5%;
+    margin-right: 5px;
+}
+
+.dropdown p {
+    width: 100%;
+    margin-left: 50px;
+    font-size: 13px;
+    color: grey;
+    font-weight: 400;
+}
+
+.dropdown a:hover {
+    background-color: #e4e4e4;
+    transition: 0.3s;
+}
+
+.logo img {
+    width: 50px;
+}
+
+#burger {
+    display: none;
+}
+
+#burger span {
+    font-size: 30px;
+}
+
+@media screen and (max-width:650px) {
+    .logo img {
+        width: 80px;
+    }
+    
+    .links {
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100px;
+        background-color: white;
+        z-index: 1000;
+    }
+    #burger {
+        display: block;
+    }
+    .p_drop .dropdown {
+        visibility: visible;
+        display: none;
+        position: static;
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .p_drop p {
+        display: none;
+    }
+    
+    .links a {
+        margin: 15px;
+    }
+    
+}
+
